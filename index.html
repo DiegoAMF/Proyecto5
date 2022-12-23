@@ -17,7 +17,14 @@
         <ul>
           <li><a href="#">Inicio</a></li>
           <li><a href="#">Productos</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Contacto</a>
+            <ul class="submenu">
+              <li><a href="https://www.youtube.com/user/mipclista">Youtube</a></li>
+              <li><a href="https://www.facebook.com/mipclista">Facebook</a></li>
+              <li><a href="https://api.whatsapp.com/send?phone=51983558113">Whatsapp</a></li>
+              <li><a href="https://mipclista.com/">Página Oficial</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
@@ -26,21 +33,64 @@
 <!-- Primer dropdown list de productos -->
 <section class="options">
   <h2>COMPONENTES</h2>
-  <label for="producto1">Selecciona un producto:</label>
+  <p>¡Selecciona los componentes que quieras de tu PC ideal! (Mouse y Teclado no va incluido)</p>
+  <label for="producto1">Procesador:</label>
 <select id="producto1" name="producto1">
-    <option value="0">Selecciona una opción</option>
-    <option value="10">Producto 1 ($10)</option>
-    <option value="20">Producto 2 ($20)</option>
-    <option value="30">Producto 3 ($30)</option>
+    <option value="0">Selecciona un producto</option>
+    <option value="340">Ryzen 7 5800X 100-100000063WOF($340)</option>
+    <option value="263">Ryzen 5 3600 100-100000031BOX($263)</option>
+    <option value="615">Core i7-11700KF BX8070811700KF 8 núcleos 5GHz($615)</option>
+    <option value="392">Core i5-11400F BX8070811400F 6 núcleos 4.4GHz($392)</option>
 </select>
 <br>
 <!-- Segundo dropdown list de productos -->
-<label for="producto2">Selecciona un producto:</label>
+<label for="producto2">Memoria RAM:</label>
 <select id="producto2" name="producto2">
-    <option value="0">Selecciona una opción</option>
-    <option value="10">Producto 1 ($10)</option>
-    <option value="20">Producto 2 ($20)</option>
-    <option value="30">Producto 3 ($30)</option>
+    <option value="0">Selecciona un producto</option>
+    <option value="42">Ddr4 3200mhz 8gb Kingston Hyperx Fury($63)</option>
+    <option value="181">Fury Beast 16GB 1 Kingston KF552C40BB-16($181)</option>
+    <option value="45">Hyperx Fury 8gb Ddr4 2400mhz($45)</option>
+    <option value="50">Ddr4 3200mhz 8gb Kingston Hyperx Fury($50)</option>
+</select>
+<br>
+<!-- Tercer dropdown list de productos -->
+<label for="producto3">Tarjeta Gráfica:</label>
+<select id="producto3" name="producto3">
+    <option value="0">Selecciona un producto</option>
+    <option value="320">Afox Amd R9 370 4gb 256bit($320)</option>
+    <option value="340">Biostar Radeon RX 500 Series RX 550 VA5505RF41($340)</option>
+    <option value="800">Nvidia MSI GeForce 200 Series 210 N210-MD1G/D3($800)</option>
+    <option value="1025">Zotac Gaming Geforce Gtx 1660($1025)</option>
+</select>
+<br>
+<!-- Cuarto dropdown list de productos -->
+<label for="producto4">Disco Duro:</label>
+<select id="producto4" name="producto4">
+    <option value="0">Selecciona un producto</option>
+    <option value="75">Disco Sólido SSD M.2 256 GB($75)</option>
+    <option value="215">Kingston SA2000M8/500G 500GB($215)</option>
+    <option value="570">D Black P10 WDBA3A0040BBK 4TB($570)</option>
+    <option value="379">EVO Plus MZ-V7S500 500GB($379)</option>
+</select>
+<br>
+<!-- Quinto dropdown list de productos -->
+<label for="producto5">Fuente de Alimentación:</label>
+<select id="producto5" name="producto5">
+    <option value="0">Selecciona un producto</option>
+    <option value="150">ASUS ROG Strix 750($150)</option>
+    <option value="99">Corsair Serie RM750x($99)</option>
+    <option value="120">Redragon PSU007 80+($120)</option>
+    <option value="130">ARESGAME AGT Series 1000W($130)</option>
+</select>
+<br>
+<!-- Sexto dropdown list de productos -->
+<label for="producto6">Placa Base:</label>
+<select id="producto6" name="producto6">
+    <option value="0">Selecciona un producto</option>
+    <option value="90">A520mh Biostar - Cod 1986($90)</option>
+    <option value="340">Msi Z490-a Pro Proseries Atx($340)</option>
+    <option value="106">Msi B350m Pro-vdh Micro Atx($106)</option>
+    <option value="350">Intel Asrock H510 Pro Btc+($350)</option>
 </select>
 <br>
 <label for="total">Total:</label>
@@ -50,40 +100,40 @@
 // Obtener los elementos select y input
     const producto1 = document.getElementById('producto1');
     const producto2 = document.getElementById('producto2');
+    const producto3 = document.getElementById('producto3');
+    const producto4 = document.getElementById('producto4');
+    const producto5 = document.getElementById('producto5');
+    const producto6 = document.getElementById('producto6');
     const total = document.getElementById('total');
 
     // Agregar un evento change a cada uno de los elementos select
     producto1.addEventListener('change', calcularTotal);
     producto2.addEventListener('change', calcularTotal);
+    producto3.addEventListener('change', calcularTotal);
+    producto4.addEventListener('change', calcularTotal);
+    producto5.addEventListener('change', calcularTotal);
+    producto6.addEventListener('change', calcularTotal);
 
     // Función para calcular el total
     function calcularTotal() {
     const precio1 = parseInt(producto1.value);
     const precio2 = parseInt(producto2.value);
-    const suma = precio1 + precio2;
+    const precio3 = parseInt(producto3.value);
+    const precio4 = parseInt(producto4.value);
+    const precio5 = parseInt(producto5.value);
+    const precio6 = parseInt(producto6.value);
+    const suma = precio1 + precio2 + precio3 + precio4 + precio5 + precio6;
 
     // Actualizar el valor del elemento input
     total.value = `$${suma}`;
     }
 
-
 </script>
-<p>The select element is used to create a drop-down list.</p>
+<p>El costo total de todas tus preferencias está aquí:</p>
 
 <form action="/action_page.php">
-  <label for="cars">Choose a car:</label>
-  <select name="cars" id="cars">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="opel">Opel</option>
-    <option value="audi">Audi</option>
-  </select>
-  <br><br>
   <input type="submit" value="Submit">
 </form>
-
-<p>Click the "Submit" button and the form-data will be sent to a page on the 
-server called "action_page.php".</p>
 </section>
 
 </body>
